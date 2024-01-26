@@ -83,13 +83,11 @@
             </svg>
         </div>
     </div>
-    <div class="" id="gallery">
+    <div class="grid grid-cols-3 mx-10 gap-10 p-4" id="gallery">
         {% for gallerys in data2 %}
-        <div class="relative mt-8 shadow-md w-full flex flex-col">
-            <div class="flex-shrink-0 h-48 overflow-hidden">
-                <img src="{{ gallerys.image.url }}" alt="" class="w-20 h-20 object-cover">
+            <div class="flex-shrink-0 w-30 h-23">
+                <img src="{{ gallerys.image.url }}" alt="" class="w-full h-23 object-cover">
             </div>
-        </div>
         {% endfor %}
     </div>
  </div>
