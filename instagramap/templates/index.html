@@ -9,43 +9,91 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
+<body class="bg-[#FFFFFF]">
     <!-- container -->
     <div class="" id="body">
-        <div class="" id="header"></div>
-        <div class="">
+        {% for i in data1 %}
 
+        <div class="flex py-8 mx-10 " id="header">
+            <span class="">
+                <p class="font-bold">{{i.username}}</p>
+            </span>
+            <span class="">
+                <a href="" class="mx-5">Settings and Privacy</a>
+                <a href="" class="mx-5">Threads</a>
+                <a href="" class="mx-5">your activity</a>
+            </span>
         </div>
+
         <div class=" flex justify-between w-1/2 h-aut mx-10" id="contlink ">
             <div class="">
-                <p class="font-bold " id="username">{{ x.username }}</p>
-                <img src="{{ x.image.url }}" alt="" class="w-20 h-20 rounded-full ">
-                <h1 class="" id="name"> {{ x.name }}</h1>
-                <button class=""> {{ x.button }}</button>
-                <p class="" id="bio"> {{ x.bio }}</p>
+                <img src="{{ i.image.url }}" alt="" class="w-20 h-20 rounded-full border-2">
+                <h1 class="font-bold" id="name"> {{ i.name }}</h1>
+                <button class="bg-[#EFEFEF] px-4 py-1 rounded-3xl"> {{ i.button }}</button>
+                <p class="" id="bio"> {{ i.bio }}</p>
             </div>
-            {% endfor %}
+
             <div class="grid grid-cols-3 w-1/2 ma">
                 <a href="#" class="">Post</a>
                 <a href="#" class="">Followers</a>
                 <a href="#" class="">Following</a>
             </div>
         </div>
-        <div class="">
-            <div class="" id="buttcontant"></div>
-            <div class="" id="button"></div>
-            <div class="" id="container"></div>
+        <div class="flex mx-10 py-3">
+            <div class="bg-[#EFEFEF] rounded-md p-1 px-4 font-bold" id="buttcontant">Edit profile</div>
+            <div class="bg-[#EFEFEF] mx-5 p-1 px-4 rounded-md font-bold" id="button">Share profile</div>
+            <div class="bg-[#EFEFEF] mx-4 rounded-md font-bold" id="container">
+                <svg class="w-10 h-10 text-gray-800 dark:text-white bg-[#EFEFEF] rounded-md mx-4" aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M16 12h4m-2 2v-4M4 18v-1a3 3 0 0 1 3-3h4a3 3 0 0 1 3 3v1c0 .6-.4 1-1 1H5a1 1 0 0 1-1-1Zm8-10a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                </svg>
+            </div>
         </div>
-        <h1 class="">Story highlights</h1>
-        <p class=""> Kep you favorate stories on your profile</p>
-        <div class="" id="1"></div>
-        <div class="" id="2"></div>
-        <div class="" id="3"></div>
-        <div class="" id="4"></div>
+        <div class="mx-10 ">
+            <h1 class="font-bold">Story highlights</h1>
+            <p class=""> Kep you favorate stories on your profile</p>
+        </div>
+        <div class="grid grid-cols-4 mx-10 p-2">
+            <div class="w-20 h-20 bg-[#FFFFFF] border-2 border-black rounded-full flex justify-center item-center"
+                id="1">
+                <P class="flex justify-center items-center font-bold w-5 ">+</P>
+            </div>
+            <div class="w-20 h-20 bg-[#EFEFEF] border-2 rounded-full" id="2"></div>
+            <div class="w-20 h-20 bg-[#EFEFEF] border-2 rounded-full" id="3"></div>
+            <div class="w-20 h-20 bg-[#EFEFEF] border-2 rounded-full" id="4"></div>
+        </div>
+        {% endfor %}
+   
+    <div class="grid grid-cols-2 p-3" id="icon">
+        <div class="mx-10 w-1/2">
+            <svg class="w-12 h-12 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 10h18M6 14h2m3 0h5M3 7v10c0 .6.4 1 1 1h16c.6 0 1-.4 1-1V7c0-.6-.4-1-1-1H4a1 1 0 0 0-1 1Z" />
+            </svg>
+        </div>
+        <div class="mx-10 w-1/2">
+            <svg class="w-12 h-12 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linejoin="round" stroke-width="2"
+                    d="M4 18V8c0-.6.4-1 1-1h1.5l1.7-1.7c.2-.2.4-.3.7-.3h6.2c.3 0 .5.1.7.3L17.5 7H19c.6 0 1 .4 1 1v10c0 .6-.4 1-1 1H5a1 1 0 0 1-1-1Z" />
+                <path stroke="currentColor" stroke-linejoin="round" stroke-width="2"
+                    d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+            </svg>
+        </div>
     </div>
-    <div class="" id="icon"></div>
-    <div class="" id="gallery"></div>
+    <div class="" id="gallery">
+        {% for gallerys in data2 %}
+        <div class="relative mt-8 shadow-md w-full flex flex-col">
+            <div class="flex-shrink-0 h-48 overflow-hidden">
+                <img src="{{ gallerys.image.url }}" alt="" class="w-20 h-20 object-cover">
+            </div>
+        </div>
+        {% endfor %}
     </div>
+ </div>
+</div>
 </body>
 
 </html>

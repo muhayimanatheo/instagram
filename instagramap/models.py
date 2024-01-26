@@ -10,3 +10,6 @@ class myProfile(models.Model):
 
     def __str__(self):
         return self.username
+
+class Gallery(models.Model):
+    image = models.ImageField(upload_to='images/')    
